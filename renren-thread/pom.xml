@@ -11,5 +11,7 @@
 
     <artifactId>renren-thread</artifactId>
 
+    <name>renren-thread</name>
+
 
 </project>
