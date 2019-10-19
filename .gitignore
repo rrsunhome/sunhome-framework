@@ -1,0 +1,10 @@
+**/.idea/*
+*.iml
+**/target/*
+*.project
+*.classpath
+*.settings
+*.mvn
+
+*/.gitignore
+/target/
