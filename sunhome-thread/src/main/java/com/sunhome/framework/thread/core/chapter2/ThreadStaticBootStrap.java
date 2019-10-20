@@ -1,4 +1,4 @@
-package com.framework.sunhome.thread.core.chapter2;
+package com.sunhome.framework.thread.core.chapter2;
 
 /**
  * synchronized 修饰静态方法时，类的所属对象相同锁或类.方法共享一把，则类中所有静态方法都是同步的(必须是同一把锁)

@@ -1,4 +1,4 @@
-package com.framework.sunhome.thread.core.chapter1;
+package com.sunhome.framework.thread.core.chapter1;
 
 /**
  * yield()方法 放弃当前cpu资源，使线程运行状态转换为可运行状态

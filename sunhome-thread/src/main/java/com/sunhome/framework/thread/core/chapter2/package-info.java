@@ -1,4 +1,4 @@
-package com.framework.sunhome.thread.core.chapter2;
+package com.sunhome.framework.thread.core.chapter2;
 
 /**
  * 多线程基础篇-走进锁机制

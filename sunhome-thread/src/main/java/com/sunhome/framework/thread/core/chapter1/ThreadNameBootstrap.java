@@ -1,4 +1,4 @@
-package com.framework.sunhome.thread.core.chapter1;
+package com.sunhome.framework.thread.core.chapter1;
 
 /**
  * 比较 Thread.currentThread().getName()  和this.getName() 不同
