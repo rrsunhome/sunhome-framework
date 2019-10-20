@@ -1,4 +1,4 @@
-package com.renren.thread.core.chapter2;
+package com.framework.sunhome.thread.core.chapter2;
 
 /**
  * synchronized修饰在方法或代码块 只要为同一个对象监视器就是同步的，不是同一个对象那么就是异步的

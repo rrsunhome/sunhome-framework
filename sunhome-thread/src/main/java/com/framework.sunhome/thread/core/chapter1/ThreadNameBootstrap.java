@@ -1,10 +1,10 @@
-package com.renren.thread.core.chapter1;
+package com.framework.sunhome.thread.core.chapter1;
 
 /**
  * 比较 Thread.currentThread().getName()  和this.getName() 不同
  * 生产环境一般用 Thread.currentThread().getName()
  * <p>
- * 线程发生死锁或活锁 线程名称用于快速定位问题
+ * 线程发生死锁或活锁 线程名称nh用于快速定位问题
  */
 public class ThreadNameBootstrap {
 

@@ -1,4 +1,4 @@
-package com.renren.thread.core.chapter1;
+package com.framework.sunhome.thread.core.chapter1;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

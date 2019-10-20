@@ -4,13 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.qijia</groupId>
-    <artifactId>renren-framework</artifactId>
+    <groupId>com.sunhome</groupId>
+    <artifactId>sunhome-framework</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <name>sunhome-framework</name>
 
     <modules>
-        <module>renren-thread</module>
+        <module>sunhome-thread</module>
     </modules>
 
 

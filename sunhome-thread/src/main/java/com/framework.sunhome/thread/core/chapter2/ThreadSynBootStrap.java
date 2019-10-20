@@ -1,4 +1,4 @@
-package com.renren.thread.core.chapter2;
+package com.framework.sunhome.thread.core.chapter2;
 
 /**
  * 采用syn解决可见性原子性
