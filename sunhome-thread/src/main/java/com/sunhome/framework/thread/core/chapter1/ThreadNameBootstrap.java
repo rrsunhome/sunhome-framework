@@ -18,7 +18,6 @@ public class ThreadNameBootstrap {
         run.setName("A");
         run.start();
 
-
     }
 }
 
@@ -32,7 +31,6 @@ class ThreadTest3 extends Thread {
 
     @Override
     public void run() {
-
         // 指的是执行该线程的对象
         System.out.println(" Thread.currentThread().getName() " + Thread.currentThread().getName());
 

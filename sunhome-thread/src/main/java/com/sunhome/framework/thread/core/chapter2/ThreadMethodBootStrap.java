@@ -31,7 +31,7 @@ class ThreadPrintOne extends Thread {
     @Override
     public void run() {
 
-        service.printOne();
+           service.printOne();
 
 
     }
