@@ -1,6 +1,7 @@
 package com.framework.sunhome.thread.core.chapter2;
 
 /**
+ * testPush
  * 多线程基础篇-走进锁机制
  *
  * 层面停留在使用层面
