@@ -13,14 +13,12 @@ public class WaitBootstrap {
         Service service = new Service();
 
         WaitThread waitThread = new WaitThread(service);
-
         NotifyThread notifyThread = new NotifyThread(service);
 
         waitThread.start();
         notifyThread.start();
     }
 }
-
 
 
 @AllArgsConstructor
@@ -38,7 +36,6 @@ class WaitThread extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             System.out.println("end wait");
 
         }

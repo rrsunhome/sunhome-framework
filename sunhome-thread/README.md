@@ -13,9 +13,13 @@
     2. 修饰静态方法时class锁
     3. volatile修饰变量保证可见性
     4. atomic原子类的使用
-    
 * chapter3 等待/唤醒机制掌握
     1. wait()、notify()、ThreadLocal使用
+    2. join()等待线程完成同时释放锁资源
+    3. sleep()进入等待队列，不释放锁
+* chapter4 lock的使用
+    1. ReentrantLock类的使用
+    2. ReentrantReadWriteLock的使用
 
     
      
