@@ -30,15 +30,14 @@
     
 ### 常见线程不安全类
 SimpleDateFormat 共享对象多线程访问 （1）（2）（3）无法保证原子性,导致Calendar对象构建有问题
-```java
+
     Calendar establish(Calendar cal) {
        (1）重置日期对象cal的属性值
        cal.clear();
        (2) 使用calb中中属性设置cal
        (3)返回设置好的cal对象
        return cal;
-    }
-```
+
 
 
 
