@@ -10,7 +10,22 @@ public class TimerApiBootstrap {
 
     public static void main(String[] args) {
         // testSchedule();
+
         testDelaySchedule();
+
+        // testDelayScheduleAtFixedRate();
+
+    }
+
+    private static void testDelayScheduleAtFixedRate() {
+        Timer timer = new Timer();
+
+        DelayTimerTask delayTimerTask = new DelayTimerTask();
+        try {
+            timer.scheduleAtFixedRate(delayTimerTask, DateUtils.parse("2019-10-22 15:28:00"), 2000);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -68,16 +83,16 @@ class SystemTimerTask extends TimerTask {
     }
 }
 
+
 class DateUtils {
-
-    private final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-
-
+    // SimpleDateFormat 非线程安全
     public static String format(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         return sdf.format(date);
     }
 
     public static Date parse(String dateStr) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         return sdf.parse(dateStr);
     }
 
