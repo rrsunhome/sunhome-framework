@@ -5,7 +5,7 @@
 2. 多线程的出现和线程的上下文切换引发了原子性问题
 3. 编译优化带来的有序性问题
 
-## 线程模块(详情见每一章的demo)
+> 线程基本模块
 * chapter1 线程的基本使用
     1. currentThread()、join()、yield()、interrupt()方法的使用
 * chapter2 synchronized锁的使用
@@ -25,9 +25,24 @@
 * chapter6 线程不安全的场景
     1. 共享变量的使用
     2. 无法保证原子性的方法
-    
 
-    
+> 线程进阶模块
+* queue 熟悉使用阻塞队列
+    * Array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 常见线程不安全类
 SimpleDateFormat 共享对象多线程访问 （1）（2）（3）无法保证原子性,导致Calendar对象构建有问题
 
