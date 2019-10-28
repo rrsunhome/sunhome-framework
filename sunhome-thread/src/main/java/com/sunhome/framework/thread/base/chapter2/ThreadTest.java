@@ -10,13 +10,8 @@ public class ThreadTest {
         ThreadUpdate threadUpdate = new ThreadUpdate();
 
         threadUpdate.update();
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         threadUpdate.read();
-//        System.out.println();
 
 
     }
@@ -31,9 +26,10 @@ class ThreadUpdate {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                System.out.println("n"+num);
                 num = 4;
                 try {
-                    TimeUnit.SECONDS.sleep(3);
+                    TimeUnit.SECONDS.sleep(10);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -42,6 +38,12 @@ class ThreadUpdate {
     }
 
     public void read() {
+        try {
+            TimeUnit.MILLISECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         System.out.println(num);
     }
 }

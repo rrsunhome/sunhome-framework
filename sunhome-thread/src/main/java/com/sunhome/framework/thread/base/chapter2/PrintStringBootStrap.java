@@ -7,25 +7,22 @@ import lombok.Data;
  */
 public class PrintStringBootStrap {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         PrintString printString = new PrintString();
         printString.start();
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        printString.setContinuePrint(false);
+
+        Thread.sleep(1000);
+
+        printString.stopMe();
 
     }
 }
 
-@Data
 class PrintString extends Thread {
-    private volatile boolean isContinuePrint = true;
 
+    private boolean stop = false;
 
     @Override
     public void run() {
@@ -33,16 +30,17 @@ class PrintString extends Thread {
     }
 
     private void print() {
-        while (this.isContinuePrint) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("dead while");
+        int i = 0;
+        while (!stop) {
+            i++;
+            // 打印方法中存在synchronized，保证了可见性
+            System.out.println(stop);
         }
 
     }
 
+    public void stopMe() {
+        stop = true;
+    }
 
 }
