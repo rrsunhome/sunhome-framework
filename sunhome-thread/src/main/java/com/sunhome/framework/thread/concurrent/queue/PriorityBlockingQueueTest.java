@@ -9,6 +9,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 
 /**
  * 使用优先级队列实现的无界阻塞队列
+ *
  */
 public class PriorityBlockingQueueTest {
 
@@ -26,8 +27,6 @@ public class PriorityBlockingQueueTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
     }
 
 
@@ -42,6 +41,7 @@ public class PriorityBlockingQueueTest {
 
         @Override
         public int compareTo(People o) {
+            // 降序
             if (this.age > o.getAge()) {
                 return -1;
             } else if (this.age < o.getAge()) {

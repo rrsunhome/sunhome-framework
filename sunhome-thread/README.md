@@ -28,7 +28,19 @@
 
 > 线程进阶模块
 * queue 熟悉使用阻塞队列
-    * Array
+* pool 线程池
+    * ThreadPoolExecutor
+        * shutDown() 中断没有执行任务的线程(正在执行中不关闭)
+        * shutDownNow() 所有线程一律关闭
+    * 合理配置线程池
+        * io密集型:2*N cpu
+        * cpu密集型:N cpu+1
+        * 建议使用有界队列可以增强系统的稳定性和预警能力
+     * 线程池的监控
+        * taskCount() 线程池需要执行的任务数量
+        * getPoolSize() 线程池的线程数量
+        * 自定义扩展线程池   
+
 
 
 
