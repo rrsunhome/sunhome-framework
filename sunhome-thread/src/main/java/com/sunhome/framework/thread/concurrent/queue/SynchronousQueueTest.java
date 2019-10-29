@@ -1,6 +1,8 @@
 package com.sunhome.framework.thread.concurrent.queue;
 
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.SynchronousQueue;
 
 /**
@@ -12,10 +14,11 @@ public class SynchronousQueueTest {
         SynchronousQueue<String> queue = new SynchronousQueue();
         // TODO Auto-generated method stub
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++) {
             new Thread(new ThreadProducer(queue)).start();
-        for (int i = 0; i < 5; i++)
-            new Thread(new ThreadConsumer(queue)).start();
+        }
+        //  for (int i = 0; i < 5; i++)
+        new Thread(new ThreadConsumer(queue)).start();
     }
 }
 
@@ -24,6 +27,7 @@ class ThreadProducer implements Runnable {
         this.queue = queue;
     }
 
+
     SynchronousQueue<String> queue;
 
     public void run() {
@@ -31,6 +35,8 @@ class ThreadProducer implements Runnable {
         name = "offer name:" + Thread.currentThread().getName();
         try {
             queue.put(name);
+            System.out.println("producer:" + name);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -49,7 +55,7 @@ class ThreadConsumer implements Runnable {
 
         try {
             //  System.out.println("begin");
-            Thread.sleep(3000);
+            //Thread.sleep(3000);
             name = queue.take();
             System.out.println("take " + name);
 
