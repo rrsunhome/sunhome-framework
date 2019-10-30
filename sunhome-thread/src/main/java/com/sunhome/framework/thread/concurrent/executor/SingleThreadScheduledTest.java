@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit;
 public class SingleThreadScheduledTest {
 
     private static ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-
-    private static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    //DateTimeFormatter,LocalDateTime 线程安全
+    private static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
 
     public static void main(String[] args) {
         Thread timeTask = new Thread(() -> {
