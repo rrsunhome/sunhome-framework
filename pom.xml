@@ -19,6 +19,7 @@
     <modules>
         <module>sunhome-thread</module>
         <module>sunhome-spi</module>
+        <module>sunhome-servlet</module>
     </modules>
     <dependencies>
         <dependency>
