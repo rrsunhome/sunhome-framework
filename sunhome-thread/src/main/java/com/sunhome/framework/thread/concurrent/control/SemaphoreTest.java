@@ -14,7 +14,7 @@ public class SemaphoreTest {
                     semaphor.acquire();
 
 
-                    TimeUnit.SECONDS.sleep(10);
+                    TimeUnit.SECONDS.sleep(9);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
