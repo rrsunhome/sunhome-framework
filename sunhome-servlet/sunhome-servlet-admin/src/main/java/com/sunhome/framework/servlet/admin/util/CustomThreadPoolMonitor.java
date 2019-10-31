@@ -1,4 +1,4 @@
-package com.sunhome.framework.thread.concurrent.executor;
+package com.sunhome.framework.servlet.admin.util;
 
 import java.util.Date;
 import java.util.List;
@@ -57,6 +57,7 @@ public class CustomThreadPoolMonitor extends ThreadPoolExecutor {
                                    ThreadFactory threadFactory, String poolName) {
         super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
         this.startTimes = new ConcurrentHashMap<>();
+        this.poolName = poolName;
 
     }
 
@@ -104,7 +105,7 @@ public class CustomThreadPoolMonitor extends ThreadPoolExecutor {
         // 已完成任务数量、任务总数、队列里缓存的任务数量、池中存在的最大线程数、
         // 最大允许的线程数、线程空闲时间、线程池是否关闭、线程池是否终止
 
-        System.out.printf("{%s}-pool-monitor: " +
+        System.out.printf("thread info {%s}-pool-monitor: " +
                         "Duration: {%s} ms, PoolSize: {%s}, CorePoolSize: {%s}, Active: {%s}, " +
                         "Completed: {%s}, Task: {%s}, Queue: {%s}, LargestPoolSize: {%s}, " +
                         "MaximumPoolSize: {%s},  KeepAliveTime: {%s}, isShutdown: {%s}, isTerminated: {%s}",

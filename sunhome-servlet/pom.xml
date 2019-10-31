@@ -5,11 +5,18 @@
         <groupId>com.sunhome</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sunhome-servlet</artifactId>
-    <packaging>war</packaging>
-    <name>sunhome-servlet Maven Webapp</name>
+    <packaging>pom</packaging>
+
     <url>http://maven.apache.org</url>
+
+    <modules>
+        <module>sunhome-servlet-admin</module>
+        <module>sunhome-servlet-starter-login</module>
+        <module>sunhome-servlet-context</module>
+    </modules>
 
     <dependencies>
         <!--添加 servlet 3.0 测试异步以及自动装配等新特性 -->
@@ -20,7 +27,4 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <finalName>sunhome-servlet</finalName>
-    </build>
 </project>

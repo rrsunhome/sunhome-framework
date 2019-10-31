@@ -6,6 +6,12 @@
 * 插拔式支持
 
 
+## 项目结构
+* sunhome-servlet
+    * sunhome-servlet-admin war工程
+	* sunhome-servlet-starter-login 自动配置登录模块
+	* sunhome-servlet-context  ServletContainerInitializer 自动发现模块
+
 ###
 后续补充.....
 
