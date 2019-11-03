@@ -2,6 +2,8 @@ package com.sunhome.framework.servlet.admin.controller;
 
 import com.sunhome.framework.servlet.admin.listener.MyAsyncListener;
 import com.sunhome.framework.servlet.admin.util.Async;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @WebServlet(urlPatterns = "/async", asyncSupported = true)

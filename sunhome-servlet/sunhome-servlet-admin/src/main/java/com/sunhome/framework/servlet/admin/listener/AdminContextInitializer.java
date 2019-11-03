@@ -1,6 +1,9 @@
 package com.sunhome.framework.servlet.admin.listener;
 
+import com.sunhome.framework.servlet.admin.controller.AsyncServlet;
 import com.sunhome.framework.servlet.context.WebApplicationInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +13,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.EnumSet;
 
 public class AdminContextInitializer implements WebApplicationInitializer {
+
+    private final static Logger logger = LoggerFactory.getLogger("filter");
+
 
     private static DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss");
 
@@ -23,9 +29,10 @@ public class AdminContextInitializer implements WebApplicationInitializer {
         threadFilter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST, DispatcherType.ASYNC), false, "/*");
         threadFilter.setAsyncSupported(true);
 
-
+/*
+        servletContext.addListener();
+*/
     }
-
 
     static class ThreadExecutionTimeFilter implements Filter {
         @Override
@@ -37,10 +44,13 @@ public class AdminContextInitializer implements WebApplicationInitializer {
         public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
             HttpServletRequest req = (HttpServletRequest) request;
             String url = req.getRequestURL().toString();
-            System.out.println(Thread.currentThread().getName() + "_URL:" + url + "-开始执行时间_" + LocalDateTime.now().format(dft));
+            logger.info("{}_URL:{}-开始执行时间_{}", Thread.currentThread().getName(), url, LocalDateTime.now().format(dft));
+//            System.out.println(Thread.currentThread().getName() + "_URL:" + url + "-开始执行时间_" + LocalDateTime.now().format(dft));
             // 责任链模式，执行下一个过滤器
             chain.doFilter(request, response);
-            System.out.println(Thread.currentThread().getName() + "_URL:" + url + "-结束执行时间_" + LocalDateTime.now().format(dft));
+            logger.info("{}_URL:{}-结束执行时间_{}", Thread.currentThread().getName(), url, LocalDateTime.now().format(dft));
+//
+//            System.out.println(Thread.currentThread().getName() + "_URL:" + url + "-结束执行时间_" + LocalDateTime.now().format(dft));
 
         }
 

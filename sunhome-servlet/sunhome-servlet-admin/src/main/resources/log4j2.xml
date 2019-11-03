@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration status="WARN" monitorInterval="60">
+
+    <Appenders>
+        <!--这个输出控制台的配置，即System.out -->
+        <Console name="console_out_appender" target="SYSTEM_OUT">
+            <!-- 控制台只输出level及以上级别的信息(onMatch),其他的直接拒绝(onMismatch) . -->
+            <ThresholdFilter level="INFO" onMatch="ACCEPT"
+                             onMismatch="DENY"/>
+            <!-- 输出日志的格式 -->
+            <PatternLayout pattern="[%p]|%d{yyyy-MM-dd HH:mm:ss SSS}|%t|%C.%M(%L)|%m%n"/>
+        </Console>
+
+        <RollingFile name="file_out_appender" fileName="/data/logs/sunhome-servlet-admin/stdout.log"
+                     filePattern="/data/logs/sunhome-servlet-admin/stdout-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%p]|%d{yyyy-MM-dd HH:mm:ss SSS}|%t|%C.%M(%L)|%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingFile>
+
+
+        <RollingFile name="filter_out_appender" fileName="/data/logs/sunhome-servlet-admin/filter/req_filter.log"
+                     filePattern="/data/logs/sunhome-servlet-admin/filter/req_filter-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%p]|%d{yyyy-MM-dd HH:mm:ss SSS}|%t|%C.%M(%L)|%m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <loggers>
+
+        <logger name="filter" level="info" additivity="false">
+            <appender-ref ref="console_out_appender"/>
+            <appender-ref ref="filter_out_appender"/>
+        </logger>
+
+        <root level="info">
+            <appender-ref ref="console_out_appender"/>
+            <appender-ref ref="file_out_appender"/>
+        </root>
+
+    </loggers>
+</configuration>
