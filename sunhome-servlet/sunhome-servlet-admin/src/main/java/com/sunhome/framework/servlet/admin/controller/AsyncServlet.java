@@ -41,4 +41,20 @@ public class AsyncServlet extends HttpServlet {
         });
     }
 
+    @Override
+    public void destroy() {
+        super.destroy();
+        Async.getInstance().shutdown();
+        boolean termination = false;
+        try {
+            termination = Async.getInstance().awaitTermination(5, TimeUnit.SECONDS);
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (!termination) {
+            Async.getInstance().shutdownNow();
+        }
+
+    }
 }
