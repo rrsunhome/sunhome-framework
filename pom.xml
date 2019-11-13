@@ -20,6 +20,7 @@
         <module>sunhome-thread</module>
         <module>sunhome-spi</module>
         <module>sunhome-servlet</module>
+        <module>sunhome-design-pattern</module>
     </modules>
     <dependencies>
         <dependency>
