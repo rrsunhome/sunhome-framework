@@ -8,7 +8,7 @@
 
 关键代码: 在抽象类里有一个ArrayList来存放观察者 当目标对象set时 遍历update所有Observer
 
-
+具体被观察者(主题)subject类 抽象观察者Observer类 具体观察者 FirstObserver SecondObserver
 
 
     
