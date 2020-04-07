@@ -1,6 +1,7 @@
 package com.sunhome.framework.servlet.admin.listener;
 
 import com.sunhome.framework.servlet.admin.controller.AsyncServlet;
+import com.sunhome.framework.servlet.admin.controller.LoginFilter;
 import com.sunhome.framework.servlet.context.WebApplicationInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,8 @@ public class AdminContextInitializer implements WebApplicationInitializer {
 
         // 添加线程执行时间过滤器
         // 拦截普通请求/异步请求
-        FilterRegistration.Dynamic threadFilter = servletContext.addFilter("threadExecutionTime", new ThreadExecutionTimeFilter());
+        FilterRegistration.Dynamic threadFilter = servletContext.addFilter("threadExecutionTime", new LoginFilter());
+        threadFilter.setInitParameter("a", "234");
         threadFilter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST, DispatcherType.ASYNC), false, "/*");
         threadFilter.setAsyncSupported(true);
 
