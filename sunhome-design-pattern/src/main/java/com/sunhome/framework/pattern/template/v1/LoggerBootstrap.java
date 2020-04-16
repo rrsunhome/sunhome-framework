@@ -13,7 +13,7 @@ public class LoggerBootstrap {
     public static void main(String[] args) {
 
         LoggerApplication loggerApplication = new LoggerApplication();
-
+        // 文件日志不处理
         loggerApplication.log("今天周末,阳光很好", Level.INFO);
 
         try {
@@ -21,9 +21,9 @@ public class LoggerBootstrap {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // 不处理
-        loggerApplication.log("今天周末,乌云密布", Level.ERROR);
 
+        loggerApplication.log("今天周末,乌云密布", Level.ERROR);
+        // 文件日志不处理
         loggerApplication.log("今天周末,适合野游", Level.INFO);
 
 

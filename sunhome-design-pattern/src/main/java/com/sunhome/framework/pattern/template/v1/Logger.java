@@ -1,5 +1,8 @@
 package com.sunhome.framework.pattern.template.v1;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author : qijia.wang
  * create at:  2020/3/28  下午5:13
@@ -26,7 +29,7 @@ public abstract class Logger {
     }
 
     public void log(String message, Level level) {
-        boolean loggable = enabled && !minLevel.name().equals(level.name());
+        boolean loggable = enabled && minLevel.getValue()<=level.getValue();
         if (!loggable) {
             return;
         }
@@ -34,6 +37,5 @@ public abstract class Logger {
     }
 
     protected abstract void doLog(String message, Level level);
-
 
 }

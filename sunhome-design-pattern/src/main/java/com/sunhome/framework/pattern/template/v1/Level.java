@@ -7,8 +7,16 @@ package com.sunhome.framework.pattern.template.v1;
  */
 public enum Level {
 
-    INFO,
-    ERROR;
+    INFO(1),
+    ERROR(2);
 
+    private Integer value;
 
+    Level(Integer value) {
+        this.value = value;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
 }
