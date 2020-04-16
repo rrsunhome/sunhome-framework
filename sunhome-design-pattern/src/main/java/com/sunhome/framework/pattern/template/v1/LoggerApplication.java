@@ -15,7 +15,7 @@ public class LoggerApplication {
     public LoggerApplication() {
         loggers = new ArrayList<>();
         addLogger(new FileLogger("文件处理器", true, Level.ERROR, "logger_file.txt"));
-        addLogger(new MessageQueueLogger("队列处理器", true, Level.ERROR));
+        addLogger(new MessageQueueLogger("队列处理器", true, Level.INFO));
     }
 
     public LoggerApplication(List<Logger> loggers) {
