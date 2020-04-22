@@ -1,9 +1,7 @@
 package com.sunhome.framework.pattern.chain.v1;
 
-import com.sunhome.framework.pattern.chain.v1.impl.AdsFilter;
-import com.sunhome.framework.pattern.chain.v1.impl.SexyFilter;
+import com.sunhome.framework.util.CommonServiceLoader;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,19 +11,15 @@ import java.util.List;
 public class ChainBootstrap {
 
     public static void main(String[] args) {
-        List<SensitiveWordFilter> filters = new ArrayList<>();
-        filters.add(new SexyFilter());
 
-        filters.add(new AdsFilter());
+//        SensitiveWordChain chain = new DefaultSensitiveWordChain();
+//        String world = "乱啊百度";
+//        String word = chain.filter(world);
+//        System.out.println(word);
 
-        SensitiveWordChain chain = new DefaultSensitiveWordChain(filters);
+        List<SensitiveWordFilter> candidateFilters = CommonServiceLoader.loadProvider(SensitiveWordFilter.class);
 
-        String world = "乱啊百度";
-
-        String word = chain.filter(world);
-
-        System.out.println(word);
-
+        System.out.println(candidateFilters);
 
     }
 }

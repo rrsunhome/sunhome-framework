@@ -1,5 +1,7 @@
 package com.sunhome.framework.pattern.chain.v1;
 
+import com.sunhome.framework.util.CommonServiceLoader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,12 @@ public class DefaultSensitiveWordChain implements SensitiveWordChain {
 
     private int index = -1;
 
+    public DefaultSensitiveWordChain() {
+        List<SensitiveWordFilter> candidateFilters = CommonServiceLoader.loadProvider(SensitiveWordFilter.class);
+        if (!candidateFilters.isEmpty()) {
+            this.filters.addAll(candidateFilters);
+        }
+    }
 
     public DefaultSensitiveWordChain(List<? extends SensitiveWordFilter> filters) {
         if (filters != null) {
@@ -32,7 +40,6 @@ public class DefaultSensitiveWordChain implements SensitiveWordChain {
         } finally {
 
         }
-
     }
 
     private SensitiveWordFilter getNext() {
@@ -46,5 +53,6 @@ public class DefaultSensitiveWordChain implements SensitiveWordChain {
         this.index++;
         return this.filters.get(this.index);
     }
+
 
 }
