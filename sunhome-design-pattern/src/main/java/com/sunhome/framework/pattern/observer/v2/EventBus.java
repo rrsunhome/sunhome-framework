@@ -1,4 +1,4 @@
-package com.sunhome.framework.pattern.chain.v2;
+package com.sunhome.framework.pattern.observer.v2;
 
 import java.util.List;
 import java.util.concurrent.Executor;

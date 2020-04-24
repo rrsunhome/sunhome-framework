@@ -22,6 +22,7 @@
         <module>sunhome-servlet</module>
         <module>sunhome-design-pattern</module>
         <module>sunhome-data-structure</module>
+        <module>sunhome-file</module>
     </modules>
     <dependencies>
         <dependency>

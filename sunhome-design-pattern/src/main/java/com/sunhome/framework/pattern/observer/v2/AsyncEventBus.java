@@ -1,10 +1,6 @@
-package com.sunhome.framework.pattern.chain.v2;
-
-import lombok.SneakyThrows;
+package com.sunhome.framework.pattern.observer.v2;
 
 import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author : wangqijia
